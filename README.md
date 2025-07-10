@@ -44,7 +44,7 @@ Month      | Usage Count
 The script will automatically:
 - Create a Python virtual environment (`venv`) if it doesn't exist.
 - Install the necessary dependencies.
-- Convert the detected JSON file into a correspondingly named SQLite database (e.g., `my_export.json` -> `my_export.db`).
+- Convert the detected JSON file into a `chats.db` SQLite database.
 - Run the analysis script to display monthly usage statistics.
 
 ### Scripts
@@ -90,7 +90,7 @@ The script will automatically:
 這個腳本將會自動完成以下所有步驟：
 - 建立一個 Python 虛擬環境 (`venv`) (如果它不存在的話)。
 - 安裝所需的相依套件。
-- 將偵測到的 JSON 檔案轉換為對應名稱的 SQLite 資料庫 (例如 `my_export.json` -> `my_export.db`)。
+- 將偵測到的 JSON 檔案轉換為 `chats.db` SQLite 資料庫。
 - 執行分析腳本以顯示月份使用統計。
 
 ### 主要腳本

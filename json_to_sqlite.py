@@ -7,7 +7,7 @@ import glob
 import os
 
 # --- Configuration ---
-# The database file path is now generated dynamically from the input JSON file name.
+DB_FILE_PATH = 'chats.db' # Fixed database file name
 # --- ---
 
 def create_tables(cursor):
@@ -80,7 +80,7 @@ def main():
         json_file_path = find_json_file()
 
     # Generate DB name from JSON file name, e.g., 'my_export.json' -> 'my_export.db'
-    db_file_path = os.path.splitext(os.path.basename(json_file_path))[0] + '.db'
+    db_file_path = DB_FILE_PATH
 
     try:
         conn = sqlite3.connect(db_file_path)

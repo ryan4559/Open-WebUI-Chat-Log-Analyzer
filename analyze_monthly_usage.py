@@ -1,6 +1,5 @@
 
 import sqlite3
-from collections import defaultdict
 
 # --- Configuration ---
 DB_FILE_PATH = 'chats.db'
@@ -12,8 +11,6 @@ def analyze_usage_by_month():
         conn = sqlite3.connect(DB_FILE_PATH)
         cursor = conn.cursor()
 
-        # This query extracts the year and month from the UNIX timestamp stored in created_at.
-        # It then groups by this year-month combination and counts the records in each group.
         query = """
         SELECT 
             strftime('%Y-%m', datetime(created_at, 'unixepoch')) as month,
@@ -45,9 +42,9 @@ def analyze_usage_by_month():
         print("=" * 30)
 
     except sqlite3.Error as e:
-        print(f"Database error: {e}")
+        print(f"Database error: {e}", file=sys.stderr)
     except FileNotFoundError:
-        print(f"Error: The database file '{DB_FILE_PATH}' was not found.")
+        print(f"Error: The database file '{DB_FILE_PATH}' was not found.", file=sys.stderr)
     finally:
         if conn:
             conn.close()
