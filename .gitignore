@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Data files - user specific exports and databases
+*.json
+*.db
+*.sqlite
+*.sqlite3
+
+# Keep example/config json files if needed
+!config.example.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
